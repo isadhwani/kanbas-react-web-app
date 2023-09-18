@@ -4,7 +4,7 @@
     <td valign="top">
           <ul>
             <li>
-              <a href="/Kanbas/Account/index.html">Account</a>
+              <a href="/Kanbas/profile/account.html">Account</a>
             </li>
             <li>
               <a href="/Kanbas/Dashboard/index.html">Dashboard</a>
@@ -38,7 +38,7 @@
         <td valign="top">
           <ul>
             <li>
-              <a href="/Kanbas/Home/home.html">Home</a>
+              <a href="/Kanbas/home.html">Home</a>
             </li>
             <li>
               <a href="/Kanbas/Courses/Modules/index.html">Modules</a>
@@ -50,7 +50,7 @@
                 <a href="#">Zoom Meetings</a>
               </li>
             <li>
-              <a href="/Kanbas/Courses/Assignments/index.html">Assignments</a>
+              <a href="/Kanbas/assignments/index.html">Assignments</a>
             </li>
 
             <li>
@@ -127,11 +127,27 @@
         <button>Configure</button>
 
 
-      <h3>Student Names</h3>
-      <input />
+        <label for="text-fields-student-names">
+          <h3>Student Names:</h3>
+       </label>
   
-      <h3>Assignment Names</h3>
-      <input />
+       <p>
+       <input type="student-names"
+             placeholder="Search Students"
+             id="text-fields-student-names"/><br/>
+       </p>
+
+      <label for="text-fields-assignments">
+        <h3>Assignment Names:</h3>
+     </label>
+
+     <p>
+     <input type="assignment-names"
+           placeholder="Search Assignments"
+           id="text-fields-assignments"/><br/>
+     </p>
+
+      <button> Apply Filters</button>
 
  
     
@@ -145,11 +161,7 @@
       <th>A2 - HTML Out of 100</th>
       <th>A3 - CSS Out of 100</th>
       <th>A4 - BOOTSTRAP Out of 100</th>
-      <th>A5 - JAVASCRIPT Out of 100</th>
-      <th>A6 - REACT Out of 100</th>
-      <th>A7 - REDUX Out of 100</th>
-      <th>A8 - NODE Out of 100</th>
-      <th>A9 - MONGO Out of 100</th>
+
     </tr>
   </thead>
   <tbody>
@@ -159,12 +171,6 @@
       <td>100</td>
       <td>100</td>
       <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-    </tr>
 
     <tr>
       <td>Bob</td>
@@ -172,12 +178,22 @@
       <td>100</td>
       <td>100</td>
       <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
-      <td>100</td>
+    </tr>
 
+    <tr>
+      <td>Billy</td>
+      <td>1</td>
+      <td>0</td>
+      <td>15</td>
+      <td>47</td>
+    </tr>
+
+    <tr>
+      <td>Billy</td>
+      <td>12</td>
+      <td>0</td>
+      <td>12</td>
+      <td>99</td>
     </tr>
   </tbody>
 </table>
