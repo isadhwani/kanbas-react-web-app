@@ -1,0 +1,213 @@
+.wd-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-left;
+    padding-left: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wd-kanbas-navigator {
+    background-color: black;
+    color: white;
+    padding: 0px;
+    width: 85px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 0px;
+    height: 100%;
+}
+
+.wd-kanbas-navigator li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wd-kanbas-navigator li a {
+    color: white;
+    text-decoration: none;
+}
+
+.wd-kanbas-navigator-selected {
+    background-color: white;
+}
+
+.wd-kanbas-navigator>.wd-kanbas-navigator-selected a {
+    color: red
+}
+
+.wd-second-column {
+    background-color: white;
+    padding-left: 0px;
+    width: 190px;
+    font-size: 0.8em;
+    font-family: Arial;
+    /* margin-left: 20px; */
+}
+
+.wd-second-column>.wd-kanbas-second-column-selected a {
+    color: black;
+    /* margin-left: 5px; */
+    padding-left: 8px;
+
+}
+
+.wd-second-column li {
+    list-style-type: none;
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100px
+}
+
+.wd-second-column li a {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-fixed-element {
+    position: fixed;
+}
+
+
+.wd-black-margin {
+    background-color: black;
+    width: 2px;
+    height: 20px;
+    float: left;
+    color: black;
+    font-size: xx-small;
+}
+
+.wd-green-margin {
+    background-color: green;
+    /* width: 3px; */
+    height: 100%;
+    float: left;
+    color: green;
+    font-size: xx-small;
+    list-style-type: none;
+
+}
+
+.wd-text-small {
+    font-size: 8px;
+    width: 100%;
+}
+
+.wd-style-breadcrumb {
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.wd-style-breadcrumb a {
+    color: tomato;
+    text-decoration: none;
+}
+
+.wd-float-left {
+    float: left;
+}
+
+.wd-syllabus-column {
+    width: 800px;
+}
+
+.wd-modules-list {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+
+.list-group-item-secondary {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    height: 40px;
+    background-color: #E1E3E3;
+    padding-left: 17px;
+    padding-top: 6px;
+    list-style-type: none;
+}
+
+.wd-module-list-item {
+    font-family: Arial;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.wd-modules-list li a {
+    text-decoration: none;
+    color: tomato;
+}
+
+.wd-pl-20 {
+    padding-left: 20px;
+}
+
+.wd-pl-50 {
+    padding-left: 50px;
+}
+
+.wd-pr-5 {
+    padding-right: 5px;
+}
+.wd-pr-20 {
+    padding-right: 20px;
+}
+
+.wd-course-status {
+    width: 220px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.wd-button-style {
+    width: 110px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wd-course-status-list li {
+    background-color: #E1E3E3;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.wd-flex-row-container div {
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wd-link-style a {
+    text-decoration: none;
+    color: tomato;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wd-subtext {
+    font-size: 40%;
+    padding-left: 50px;
+}
+
+.breadcrumb .breadcrumb-item:nth-child(2)::before {
+    content: "";
+  }
+
+  .wd-float-left div {
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

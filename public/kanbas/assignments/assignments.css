@@ -1,0 +1,35 @@
+.wd-circular-text {
+    border: 1px;
+    border-style: solid;
+    border-radius: 40%; /* Creates a circular shape */
+    width: 100px;
+    text-align: center;
+}
+
+.wd-modules-list li a {
+    text-decoration: none;
+    color: black;
+}
+
+.wd-input-container {
+    width:500px;
+    padding-left:100px;
+    margin:0;
+}
+
+.wd-edit-list-group {
+    border:none
+}
+
+.wd-edit-list-group .list-group-item{
+    border:none;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.wd-assignment-edit-text{
+    text-align: right;
+    padding-right: 5px;
+    margin: 0px;
+}

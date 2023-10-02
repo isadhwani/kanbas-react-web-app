@@ -1,0 +1,28 @@
+.wd-card-style {
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 270px;
+    
+}
+.wd-card-body-style {
+    padding:0px;
+    margin:0px;
+    margin-right: 40px;
+
+}
+
+.wd-left-margin {
+    margin-left: 30px;
+    width:100%;
+}
+
+.wd-card-course-image {
+    height:50%;
+    background-color: navy;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 4%;
+}
+
+a {
+    text-decoration: none;
+}
