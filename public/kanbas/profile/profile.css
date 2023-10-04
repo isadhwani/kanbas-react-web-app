@@ -35,4 +35,9 @@
 
 }
 
+.wd-profile-column li a {
+    text-decoration: none;
+    color: tomato;
+}
+
 
