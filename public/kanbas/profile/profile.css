@@ -40,4 +40,8 @@
     color: tomato;
 }
 
+.wd-edit-list-group {
+    width: 250px;
+    border-radius: 20px;
+}
 

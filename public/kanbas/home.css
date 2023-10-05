@@ -270,12 +270,31 @@
 
 
 
-
-
 .wd-chevron-style ul li {
     list-style-type: none;
     text-align: left;
     width: 100%;
     border:none
     
+}
+
+.wd-text-allign-right {
+    text-align: right;
+}
+
+
+.wd-edit-list-group {
+    width: 250px;
+    border-radius: 20px;
+    border:solid;
+    margin:20px;
+}
+
+.wd-grey-add-box {
+    background-color: grey;
+    text-align: center;
+    vertical-align: center;
+    font-size: large;
+    height: 40px;
+    width: 100%;
 }
