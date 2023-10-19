@@ -1,0 +1,22 @@
+.wd-card-style {
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 240px;
+
+
+}
+
+.wd-card-body-style {
+    padding: 0px;
+    margin: 0px;
+    margin-right: 30px;
+    height:200px;
+    
+
+}
+
+.wd-left-margin {
+    margin-left: 30px;
+    /* width: 100%; */
+}
+

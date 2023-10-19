@@ -1,0 +1,26 @@
+.wd-course-status-list li {
+    background-color: #E1E3E3;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wd-link-style  {
+    text-decoration: none;
+    color: tomato;
+    /* font-size: 0.8em; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-radius: 0px;
+}
+
+.wd-subtext {
+    font-size: 70%;
+    padding-left: 50px;
+}
