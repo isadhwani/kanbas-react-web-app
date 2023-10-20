@@ -5,7 +5,7 @@ import { BsChevronUp } from "react-icons/bs";
 import { LiaBarsSolid } from "react-icons/lia";
 import Modules from "./Modules";
 import "./index.css";
-import Home from "../Home";
+import Home from "./Home";
 import Assignments from "../Assignments";
 import AssignmentEditor from "../Assignments/AssignmentEditor";
 import Grades from "./Grades";
@@ -19,12 +19,12 @@ function Courses() {
 
     const course = db.courses.find((course) => course._id === courseId);
     return (
-        <div className="container">
+        <div className="container wd-width-190px">
             {/* <h1>Course {course.name}</h1> */}
             <div>
-                <div className="float-end">
+                {/* <div className="float-end">
                     <BsChevronUp size={30} className="wd-icon Bs" />
-                </div>
+                </div> */}
 
 
                 <div className="wd-flex-row-container">
@@ -47,7 +47,7 @@ function Courses() {
             </div>
 
             <CourseNavigation />
-            <div>
+            <div className="wd-second-column">
                 <div
                     className="overflow-y-scroll position-fixed bottom-0 end-0"
                     style={{
@@ -56,12 +56,11 @@ function Courses() {
                     }}
                 >
                     <Routes>
-                        <Route path="/" element={<Navigate to="Home" />} />
-                        <Route path="Home" element={<h1>Home</h1>} />
-                        <Route path="Modules" element={<Modules />} />
+                        {/* <Route path="/" element={<Navigate to="Home" />} /> */}
+                        {/* <Route path="Home" element={<h1>Home</h1>} /> */}
+                        <Route path="Modules" element={<Modules/>} />
                         <Route path="Assignments" element={<Assignments />} />
-                        <Route path="Home" element={<Home />} />
-                        <Route path="Grades" element={<Grades />} />
+                                                <Route path="Grades" element={<Grades />} />
 
 
                         <Route path="Assignments/:assignmentId"

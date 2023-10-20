@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.wd-second-column li a {
+.wd-second-column > li > a {
     color: red;
     text-decoration: none;
 }

@@ -3,7 +3,7 @@ import KanbasNavigation from "./KanbasNavigation";
 import "./index.css";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
-import Home from "./Home";
+import Home from "./Courses/Home";
 import Assignments from "./Assignments";
 
 function Kanbas() {

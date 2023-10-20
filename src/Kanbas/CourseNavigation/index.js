@@ -6,7 +6,7 @@ function CourseNavigation() {
     const { courseId } = useParams();
     const { pathname } = useLocation();
     return (
-        <div class="wd-float-left">
+        <div class="wd-float-left ">
 
             <ul className="wd-second-column">
                 {links.map((link, index) => (
@@ -28,7 +28,7 @@ function CourseNavigation() {
                 ))}
             </ul>
         </div>
-    );
+                    );
 
 }
 

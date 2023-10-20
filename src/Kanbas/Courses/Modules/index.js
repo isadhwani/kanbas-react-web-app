@@ -3,7 +3,6 @@ import ModuleList from "./ModulesList";
 function Modules() {
     return (
         <div>
-            <span>Modules</span>
 
 
             <div className="float-end wd-flex-row-container">
