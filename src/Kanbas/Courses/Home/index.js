@@ -98,13 +98,16 @@
 import Modules from "../Modules";
 import Courses from "../../Courses";
 import Status from "./Status";
-
+import db from  "../../Database";
+import { useState } from "react";
 function Home() {
+  const [courses, setCourses] = useState(db.courses);
+
   return (
     <div>
 
       <div className="float-end wd-flex-row-container">
-        <Courses />
+        <Courses courses={courses}/>
         <br/>
 
 

@@ -1,46 +1,50 @@
 import ModuleList from "./ModulesList";
+import store from "../../store";
+import { Provider } from "react-redux";
 
 function Modules() {
     return (
-        <div>
+        <Provider store={store}>
+
+            <div>
+
+                <div className="float-end wd-flex-row-container">
+
+                    <button type="button" className="btn btn-light">Collapse All</button>
+                    <button type="button" className="btn btn-light">View Progress</button>
 
 
-            <div className="float-end wd-flex-row-container">
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <div className="wd-pr-5">Publish All
+                            </div>
+                        </button>
 
-                <button type="button" className="btn btn-light">Collapse All</button>
-                <button type="button" className="btn btn-light">View Progress</button>
+                        <ul className="dropdown-menu">
+
+                        </ul>
+                    </div>
 
 
-                <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <div className="wd-pr-5">Publish All
-                        </div>
+
+                    <button type="button" className="btn btn-danger">
+                        {/* <i class="fa fa-plus " style="color: white"></i> */}
+                        Module</button>
+
+                    <button type="button" className="btn btn-light">
+                        {/* <i className="fa fa-ellipsis-v color-grey"></i> */}
                     </button>
-
-                    <ul className="dropdown-menu">
-  
-                    </ul>
                 </div>
 
+                <br />
+                <br />
+                <hr />
 
 
-                <button type="button" className="btn btn-danger">
-                    {/* <i class="fa fa-plus " style="color: white"></i> */}
-                    Module</button>
-
-                <button type="button" className="btn btn-light">
-                    {/* <i className="fa fa-ellipsis-v color-grey"></i> */}
-                </button>
+                <ModuleList />
             </div>
-
-            <br />
-            <br />
-            <hr />
-
-
-            <ModuleList />
-        </div>
+        </Provider>
 
     );
 }
