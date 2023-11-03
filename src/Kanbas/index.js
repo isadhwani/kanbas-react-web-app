@@ -36,7 +36,6 @@ function Kanbas() {
 
   return (
     <Provider store={store}>
-
     <div className="wd-kanbas-page d-flex">
       <KanbasNavigation />
       <div>
