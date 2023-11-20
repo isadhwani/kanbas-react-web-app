@@ -43,10 +43,13 @@ function Dashboard(
                             <img src={require("./177b63 2.png")} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{course.name}</h5>
+                                {console.log("COURSE ID: " + JSON.stringify(course._id.$oid))}
+                                {console.log("COURSE INFO: " + JSON.stringify(course))}
+
 
                                 <Link
                                     key={course._id}
-                                    to={`/Kanbas/Courses/${course._id}`}
+                                    to={`/Kanbas/Courses/${course._id.$oid}`}
                                     className="btn btn-primary">
                                     {course.name}
                                 </Link>

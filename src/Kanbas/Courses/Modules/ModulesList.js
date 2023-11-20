@@ -5,17 +5,27 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addModule,
-  deleteModule,
-  updateModule,
-  setModule,
+    addModule,
+    deleteModule,
+    updateModule,
+    setModules,
 } from "./modulesReducer";
+import { useEffect } from "react";
+
+
+import { findModulesForCourse } from "./client";
 
 function ModuleList() {
-  const { courseId } = useParams();
-  const modules = useSelector((state) => state.moduleReducer.modules);
-  const module = useSelector((state) => state.moduleReducer.module);
-  const dispatch = useDispatch();
+    const { courseId } = useParams();
+    useEffect(() => {
+        findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId]);
+    const modules = useSelector((state) => state.moduleReducer.modules);
+    const module = useSelector((state) => state.moduleReducer.module);
+    const dispatch = useDispatch();
 
     return (
         <ul className="list-group">
@@ -34,16 +44,16 @@ function ModuleList() {
                     <div class="form-group">
                         <textarea value={module.name}
                             onChange={(e) =>
-                                dispatch(setModule({ ...module, name: e.target.value }))}></textarea>
+                                dispatch(setModules({ ...module, name: e.target.value }))}></textarea>
                     </div>
 
                     <div class="form-group">
                         <textarea value={module.description}
-                            onChange={(e) => 
-                                dispatch(setModule({ ...module, description: e.target.value }))
+                            onChange={(e) =>
+                                dispatch(setModules({ ...module, description: e.target.value }))
 
                             }></textarea>
-                        
+
                     </div>
                 </form>
 
@@ -59,12 +69,12 @@ function ModuleList() {
 
                                 <span>{module.name}</span>
                                 <button className="btn btn-danger float-end"
-              onClick={() => dispatch(deleteModule(module._id))}>
-              Delete
+                                    onClick={() => dispatch(deleteModule(module._id))}>
+                                    Delete
                                 </button>
 
                                 <button className="btn btn-secondary float-end"
-              onClick={() => dispatch(setModule(module))}>
+                                    onClick={() => dispatch(setModules(module))}>
                                     Edit
                                 </button>
 

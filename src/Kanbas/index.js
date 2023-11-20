@@ -17,6 +17,7 @@ function Kanbas() {
   const URL = "http://localhost:4000/api/courses";
   const findAllCourses = async () => {
     const response = await axios.get(URL);
+    console.log("Response Data:" + response.data)
     setCourses(response.data);
   };
 
@@ -47,7 +48,7 @@ function Kanbas() {
   };
 
 
-  const updateCourse = async (course) => {
+  const updateCourse = async () => {
     const response = await axios.put(
       `${URL}/${course._id}`,
       course
@@ -60,8 +61,9 @@ function Kanbas() {
         return c;
       })
     );
-    //setCourse({ name: "" });
+    setCourse({ name: "" });
   };
+
 
 
   return (

@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 function Modules() {
     return (
         <Provider store={store}>
-
             <div>
 
                 <div className="float-end wd-flex-row-container">

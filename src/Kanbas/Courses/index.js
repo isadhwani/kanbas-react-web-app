@@ -11,12 +11,30 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import { Provider } from "react-redux";
 import store from "../../Kanbas/store";
+import { useState, useEffect } from "react";
+import axios from "axios";
+const URL = "http://localhost:4000/api/courses";
+
 
 
 function Courses({ courses }) {
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
 
+    const [course, setCourse] = useState({});
+
+    const findCourseById = async (courseId) => {
+      console.log("Course Id:" + JSON.stringify(courseId));
+      console.log("URL:" + `${URL}/${courseId}`);
+      const response = await axios.get( `${URL}/${courseId}`);
+      console.log("Response Data:" + response.data);
+      setCourse(response.data);
+    };
+
+    useEffect(() => {
+        findCourseById(courseId);
+      }, [courseId]);
+    
+  
     const location = useLocation();
     const pathSegments = location.pathname.split('/');
     const lastSegment = pathSegments[pathSegments.length - 1];
