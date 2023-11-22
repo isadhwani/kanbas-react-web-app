@@ -4,8 +4,7 @@ import { React, useState } from "react";
 import "./index.css";
 
 function Dashboard(
-    { courses, course, setCourse, addNewCourse,
-      deleteCourse, updateCourse }
+    { courses, course, setCourse, addNewCourse,deleteCourse, updateCourse }
     ) {
 
 
