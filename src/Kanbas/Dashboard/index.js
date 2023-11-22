@@ -46,7 +46,7 @@ function Dashboard(
 
                                 <Link
                                     key={course._id}
-                                    to={`/Kanbas/Courses/${course._id}`}
+                                    to={`/Kanbas/Courses/${course.number}`}
                                     className="btn btn-primary">
                                     {course.name}
                                 </Link>

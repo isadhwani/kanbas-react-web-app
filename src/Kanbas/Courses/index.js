@@ -1,4 +1,3 @@
-import db from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import CourseNavigation from "../CourseNavigation";
 import { BsChevronUp } from "react-icons/bs";
@@ -15,11 +14,16 @@ import store from "../../Kanbas/store";
 
 function Courses({ courses }) {
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+
+    // console.log("courses: ", courses)
 
     const location = useLocation();
     const pathSegments = location.pathname.split('/');
     const lastSegment = pathSegments[pathSegments.length - 1];
+
+    const course = courses.find((course) => course.number === courseId);
+    console.log("course number: ", lastSegment)
+    console.log("course: ", course)
 
 
     return (
@@ -43,7 +47,7 @@ function Courses({ courses }) {
                         <div>
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb wd-style-breadcrumb">
-                                    <li className="breadcrumb-item wd-style-breadcrumb">{course._id}</li>
+                                    <li className="breadcrumb-item wd-style-breadcrumb">{courseId}</li>
                                     <li className="breadcrumb-item active " aria-current="page"> {lastSegment}</li>
                                 </ol>
                             </nav>

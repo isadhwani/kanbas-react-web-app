@@ -1,32 +1,65 @@
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addModule,
-  deleteModule,
-  updateModule,
-  setModule,
+    addModule,
+    deleteModule,
+    updateModule,
+    setModule,
+    setModules,
 } from "./modulesReducer";
+import * as client from "./client";
 
 function ModuleList() {
-  const { courseId } = useParams();
-  const modules = useSelector((state) => state.moduleReducer.modules);
-  const module = useSelector((state) => state.moduleReducer.module);
-  const dispatch = useDispatch();
+    const { courseId } = useParams();
+    const modules = useSelector((state) => state.moduleReducer.modules);
+    const module = useSelector((state) => state.moduleReducer.module);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        client.findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId]);
+
+    const handleAddModule = () => {
+        client.createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = async () => {
+        const status = await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
+
+    console.log("Modules: " + modules);
+    console.dir(modules)
+    console.log("CourseId: " + courseId);
 
     return (
         <ul className="list-group">
             <li className="list-group-item">
                 <button className="btn btn-primary float-end"
-                    onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+
+                    onClick={handleAddModule}>
                     Add
                 </button>
 
                 <button className="btn btn-secondary float-end"
-                    onClick={() => dispatch(updateModule(module))}>
+                    onClick={handleUpdateModule}>
+
                     Update
                 </button>
 
@@ -39,18 +72,20 @@ function ModuleList() {
 
                     <div class="form-group">
                         <textarea value={module.description}
-                            onChange={(e) => 
+                            onChange={(e) =>
                                 dispatch(setModule({ ...module, description: e.target.value }))
 
                             }></textarea>
-                        
+
                     </div>
                 </form>
 
 
             </li>
 
+
             {
+
                 modules
                     .filter((module) => module.course === courseId)
                     .map((module, index) => (
@@ -59,12 +94,13 @@ function ModuleList() {
 
                                 <span>{module.name}</span>
                                 <button className="btn btn-danger float-end"
-              onClick={() => dispatch(deleteModule(module._id))}>
-              Delete
+                                    onClick={() => handleDeleteModule(module._id)}
+                                >
+                                    Delete
                                 </button>
 
                                 <button className="btn btn-secondary float-end"
-              onClick={() => dispatch(setModule(module))}>
+                                    onClick={() => dispatch(setModule(module))}>
                                     Edit
                                 </button>
 

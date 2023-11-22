@@ -5,7 +5,6 @@ import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import Home from "./Courses/Home";
 import Assignments from "./Courses/Assignments";
-import db from "./Database";
 import { useState } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
@@ -15,11 +14,11 @@ import { useEffect } from "react";
 function Kanbas() {
   const [courses, setCourses] = useState([]);
   const URL = "http://localhost:4000/api/courses";
+
   const findAllCourses = async () => {
     console.log("findAllCourses")
     const response = await axios.get(URL);
     console.log("found courses: ", response.data)
-
     setCourses(response.data);
   };
 
@@ -42,17 +41,21 @@ function Kanbas() {
   };
 
   const deleteCourse = async (courseId) => {
+    console.log("deleteCourse: ", courseId)
     const response = await axios.delete(
-      `${URL}/${courseId}`
+      `${URL}/${courseId.$oid}`
     );
     setCourses(courses.filter(
       (c) => c._id !== courseId));
   };
 
 
-  const updateCourse = async (course) => {
+  const updateCourse = async () => {
+    console.log("updating course!")
+    console.dir(course)
+    console.log("updateCourse: ", JSON.stringify(course))
     const response = await axios.put(
-      `${URL}/${course._id}`,
+      `${URL}/${course._id.$oid}`,
       course
     );
     setCourses(
@@ -82,8 +85,7 @@ function Kanbas() {
             addNewCourse={addCourse}
             deleteCourse={deleteCourse}
             updateCourse={updateCourse} />} />
-          <Route path="Courses/:courseId/*" element={
-            <Courses courses={courses} />} />
+          <Route path="Courses/:courseId/*" element={<Courses courses={courses} />} />
           <Route path="Home/:courseId/*" element={<Home />} />
           <Route path="Courses/:courseId/Home" element={<Home />} />
           <Route path="Assignments" element={<Assignments />} />
