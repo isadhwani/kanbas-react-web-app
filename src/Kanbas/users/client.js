@@ -1,7 +1,9 @@
 import axios from "axios";
+// import "dotenv/config";
 
-//export const BASE_API = process.env.REACT_APP_BASE_API_URL;
-export const BASE_API = "http://localhost:4000";
+// export const BASE_API = process.env.REACT_APP_BASE_API_URL;
+//export const BASE_API = "http://localhost:4000";
+export const BASE_API = "https://kanbas-node-server-app-2-w4ae.onrender.com";
 export const USERS_API = `${BASE_API}/api/users`;
 
 // let lastId = 130;
