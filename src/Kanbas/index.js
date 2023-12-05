@@ -10,11 +10,15 @@ import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
 import { useEffect } from "react";
+import Signin from "./users/signin";
+import UserTable from "./users/table";
+import Account from "./users/account";
+import Signup from "./users/signup";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
-  const URL = "https://kanbas-node-server-app-2-w4ae.onrender.com/api/courses"
-  //const URL = "http://localhost:4000/api/courses";
+  //const URL = "https://kanbas-node-server-app-2-w4ae.onrender.com/api/courses"
+  const URL = "http://localhost:4000/api/courses";
 
   const findAllCourses = async () => {
     console.log("findAllCourses")
@@ -91,10 +95,12 @@ function Kanbas() {
           <Route path="Courses/:courseId/Home" element={<Home />} />
           <Route path="Assignments" element={<Assignments />} />
           <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />
+          <Route path="/account/signin" element={<Signin />} />
+          <Route path="/account/signup" element={<Signup />} />
 
-
-
-
+          
+          <Route path="/account" element={<Account />} />
+          <Route path="/admin/users" element={<UserTable />} />
           {/* <Route path="Calendar" element={<h1>Calendar</h1>} /> */}
         </Routes>
       </div>
@@ -102,4 +108,5 @@ function Kanbas() {
     </Provider>
   );
 }
+
 export default Kanbas;

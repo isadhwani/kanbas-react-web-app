@@ -1,10 +1,12 @@
+import "../CourseNavigation/index.css"
 import { Link, useParams, useLocation } from "react-router-dom";
-import "./index.css"
 
-function CourseNavigation() {
-    const links = ["Home", "Modules", "Piazza", "Zoom Meetings", "Assignments", "Quizzes", "Grades", "People", "Panpoto Video", "Credentials", "Progress Reports"];
+export function AccountNavigate() {
+
+    const links = ["signin", "signup"]
     const { courseId } = useParams();
     const { pathname } = useLocation();
+
     return (
         <div class="wd-float-left ">
 
@@ -17,9 +19,9 @@ function CourseNavigation() {
                         <Link
                             key={index}
                             {...courseId ? (
-                                { to: `/Kanbas/Courses/${courseId}/${link}` }
+                                { to: `/Kanbas/Account/${link}` }
                             ) : (
-                                { to: `/Kanbas/${link}` }
+                                { to: `/Kanbas/Account/${link}` }
                             )} className={`list-group-item ${pathname.includes(link) && "active"}`}>
                             {link}
                         </Link>
@@ -29,8 +31,5 @@ function CourseNavigation() {
             </ul>
         </div>
     );
-
+    
 }
-
-
-export default CourseNavigation;
