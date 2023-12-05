@@ -1,14 +1,31 @@
 import * as client from "./client";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AccountNavigate } from "./accountNavigate";
+import { useNavigate } from "react-router-dom";
 import "../CourseNavigation/index.css"
 
 
 function Account() {
+    const { id } = useParams();
     const [account, setAccount] = useState(null);
+    const findUserById = async (id) => {
+        const user = await client.findUserById(id);
+        setAccount(user);
+    };
+    useEffect(() => {
+        if (id) {
+            findUserById(id);
+        } else {
+            fetchAccount();
+        }
+    }, []);
+
+
     const navigate = useNavigate();
+
+
     const fetchAccount = async () => {
         const account = await client.account();
         setAccount(account);
@@ -22,9 +39,9 @@ function Account() {
     const signout = async () => {
         await client.signout();
         navigate("/Kanbas/Account/signin");
-      };
+    };
 
-      
+
     useEffect(() => {
         fetchAccount();
     }, []);
